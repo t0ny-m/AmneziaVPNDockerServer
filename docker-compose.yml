@@ -1,4 +1,7 @@
-version: '3'
+networks:
+  default:
+    name: amnezia-docker-network
+    
 services:
   ssh-service:
     build: .
