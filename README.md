@@ -12,7 +12,6 @@ This is a Docker image for the Amnezia VPN server gateway. It allows you to depl
 ```sh
 git clone https://github.com/t0ny-m/AmneziaVPNDockerServer.git
 cd AmneziaVPNDockerServer
-docker compose build
 ```
 
 ### 3. Generate SSH Keys
@@ -30,14 +29,10 @@ ssh-keygen -t ed25519 -f ./ssh-keys/amz_key -N ""
    Set proper permissions:
    ```bash
    sudo chown root:root authorized_keys
-   chmod 600 authorized_keys
+   sudo chmod 600 authorized_keys
    ```
-2. **Setup Permissions**:
-   ```bash
-   sudo chown root:root authorized_keys
-   chmod 600 authorized_keys
-   ```
-3. **Adjust SSH Settings**:
+
+3. * **Adjust SSH Settings**:
    Ensure `setup/00-standard.conf` is configured to bypass strict mode checks (common issue with Docker volume mounts) and allow password fallback if needed:
    ```conf
    PermitRootLogin yes
