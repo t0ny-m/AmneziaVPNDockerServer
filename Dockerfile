@@ -17,7 +17,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt update && \
     # Disable SSH-daemon autostart
     touch /etc/ssh/sshd_not_to_be_run && \
     chmod 0644 /etc/ssh/sshd_not_to_be_run && \
-    echo 'root:password' | chpasswd
+    echo 'root:amnezia_secret_777' | chpasswd
 
 EXPOSE 22
 
