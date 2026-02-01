@@ -26,6 +26,11 @@ ssh-keygen -t ed25519 -f ./ssh-keys/amz_key -N ""
 ### 4. Configure Authentication
 1. **Manage `authorized_keys`**:
    Copy the content of your public key (`./ssh-keys/amz_key.pub`) into a new file named `authorized_keys` in the root directory.
+   
+   ```bash
+   cat ./ssh-keys/amz_key.pub >> authorized_keys
+   ```
+   
    Set proper permissions:
    ```bash
    sudo chown root:root authorized_keys
